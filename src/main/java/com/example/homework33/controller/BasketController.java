@@ -23,7 +23,7 @@ public class BasketController {
     @GetMapping("/store/order/add")
     @ResponseBody
     public String addBasket(@RequestParam List<Integer> item) {
-            this.basketService.addBasket(item);
+        this.basketService.addBasket(item);
         return "Корзины добавлены успешно";
     }
 
