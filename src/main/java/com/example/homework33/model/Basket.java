@@ -1,13 +1,24 @@
 package com.example.homework33.model;
 
-public class Basket {
-    private int id;
+import java.util.List;
 
-    public Basket(int id) {
+public class Basket {
+    private Integer id;
+//    private List<Integer> listId;
+
+    public Basket(Integer id) {
         this.id = id;
     }
 
     public int getId() {
         return id;
     }
+
+//    public List<Integer> getListID() {
+//        return listId;
+//    }
+//
+//    public void addIdToList (Integer id) {
+//        listId.add(id);
+//    }
 }

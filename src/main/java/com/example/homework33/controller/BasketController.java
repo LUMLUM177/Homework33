@@ -1,7 +1,6 @@
 package com.example.homework33.controller;
 
 import com.example.homework33.model.Basket;
-import com.example.homework33.record.BasketRequest;
 import com.example.homework33.service.BasketService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,17 +16,14 @@ public class BasketController {
     }
 
     @GetMapping("/store/order/get")
-    public List<Basket> getAllBaskets() {
+    public List<Basket> getOrder() {
         return this.basketService.getAllBaskets();
     }
 
     @GetMapping("/store/order/add")
     @ResponseBody
-    public String addBasket(@RequestParam int... item) {
-        for (int number : item) {
-            BasketRequest basketRequest = new BasketRequest(number);
-            this.basketService.addBasket(basketRequest);
-        }
+    public String addBasket(@RequestParam List<Integer> item) {
+            this.basketService.addBasket(item);
         return "Корзины добавлены успешно";
     }
 

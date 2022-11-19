@@ -1,7 +1,6 @@
 package com.example.homework33.service;
 
 import com.example.homework33.model.Basket;
-import com.example.homework33.record.BasketRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -17,9 +16,10 @@ public class BasketService {
         return this.baskets;
     }
 
-    public Basket addBasket(BasketRequest basketRequest) {
-        Basket basket = new Basket (basketRequest.getId());
-        this.baskets.add(basket);
-        return basket;
+    public void addBasket(List<Integer> id) {
+        for (Integer number : id) {
+            Basket basket = new Basket(number);
+            this.baskets.add(basket);
+        }
     }
 }
